@@ -5042,7 +5042,8 @@ LibraryManager.library = {
       try {
         var lib_module = eval(lib_data)(
 #if ASM_JS
-          asm.maxFunctionIndex
+          asm.maxFunctionIndex,
+          Module
 #else
           {{{ Functions.getTable('x') }}}.length
 #endif
